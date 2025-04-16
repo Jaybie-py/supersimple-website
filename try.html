@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My One And Only 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffe0f7);
+      color: #444;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #ffb6c1;
+      color: white;
+      animation: fadeIn 2s ease-in;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      animation: slideUp 1s ease-in-out;
+    }
+
+    h2 {
+      color: #e75480;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.photo-click {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.photo-click input {
+  display: none;
+}
+
+.photo-click img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.photo-click input:checked ~ img {
+  transform: scale(1.03);
+}
+
+.heart-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.heart-burst span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: pink;
+  transform: rotate(45deg);
+  border-radius: 3px;
+  opacity: 0;
+  animation: none;
+}
+
+.heart-burst span::before,
+.heart-burst span::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: pink;
+  border-radius: 50%;
+}
+
+.heart-burst span::before {
+  top: -8px;
+  left: 0;
+}
+
+.heart-burst span::after {
+  left: -8px;
+  top: 0;
+}
+
+.photo-click input:checked ~ .heart-burst span {
+  animation: explode 0.6s ease forwards;
+}
+
+.heart-burst span:nth-child(1) { top: -40px; left: 0; }
+.heart-burst span:nth-child(2) { top: -30px; left: 30px; }
+.heart-burst span:nth-child(3) { top: 0px; left: 40px; }
+.heart-burst span:nth-child(4) { top: 30px; left: 30px; }
+.heart-burst span:nth-child(5) { top: 40px; left: 0; }
+.heart-burst span:nth-child(6) { top: 30px; left: -30px; }
+.heart-burst span:nth-child(7) { top: 0px; left: -40px; }
+.heart-burst span:nth-child(8) { top: -30px; left: -30px; }
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatHearts 10s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <script>
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+
+  <header>
+    <h1>Welcome to My Love's Portfolio 💖</h1>
+    <p>Here's a little peek into the world of the most amazing girl ever 💕</p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>🌸 Something About You</h2>
+      <p>Hi! I'm [Your Girlfriend's Name], a sweet soul who loves spreading kindness and smiles! I'm full of dreams, creativity, and warm vibes. I'm grateful for the love and all the little moments in life 💫</p>
+    </div>
+
+    <div class="card">
+      <h2> </h2>
+      <ul>
+        <li>Drawing cute things ✏️</li>
+        <li>Listening to music 🎶</li>
+        <li>Reading romantic stories 📚</li>
+        <li>Baking sweet treats 🍰</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>💖 Our Memories (Photos)</h2>
+      <div class="photo-gallery">
+	   <label class="photo-click">
+      <input type="checkbox" />
+        <img src="C:\Users\jaybie\Downloads\487069753_1012422783620208_3682590840773307719_n.jpg" alt="https://scontent.fmnl8-4.fna.fbcdn.net/v/t1.15752-9/487069753_1012422783620208_3682590840773307719_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEQIqRR_fv3q87Rz-_W9zzIKVqYjaJ9IcwpWpiNon0hzJFrs1wvl5_k1HHjx1tj165poh4M72szF7GXDqnkkO2y&_nc_ohc=Xu5-9NbkkiYQ7kNvwFGOI9o&_nc_oc=AdnwxzugU8COB1u3X6dazNWLcvuTbEsD0_6fUxKSovZgNTY2wl_OMUgsarNT6WmhJKU&_nc_zt=23&_nc_ht=scontent.fmnl8-4.fna&oh=03_Q7cD2AE59yUWdGr31rle6GlNG-A7lIo0YuG5mAxGF8s6nLx75w&oe=681C4383">
+		<div class="heart-burst">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </label>
+	
+	<label class="photo-click">
+      <input type="checkbox" />
+        <img src="C:\Users\jaybie\Downloads\489437242_1355145605634528_7733763668045392824_n.jpg" alt="https://scontent.fmnl8-2.fna.fbcdn.net/v/t1.15752-9/489437242_1355145605634528_7733763668045392824_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHGkzMa2-FrbHGdGE98AkyNcVDCTfrWKZdxUMJN-tYplyr_X9LBbC_764y19MvNJcMKoEN8_ZWoYfgtf1wLI9wI&_nc_ohc=5Pnun1We-4IQ7kNvwGKXeyN&_nc_oc=AdmLthuEC-PqyI-PVimye_A053-ckWZ_FvQdG6vfQlKaSPJJ52jIVGIe0X8ROUwwgpE&_nc_zt=23&_nc_ht=scontent.fmnl8-2.fna&oh=03_Q7cD2AEBztpUB6JxOnNnVF5ngLjLJL7e7ilsH1cQEcPxJBek0g&oe=681C3495">
+		<div class="heart-burst">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </label>
+	
+	<label class="photo-click">
+      <input type="checkbox" />
+        <img src="C:\Users\jaybie\Downloads\487082159_522970380882186_42551868893729228_n.jpg" alt="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/487082159_522970380882186_42551868893729228_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGYmR-9xcEcVl86qymN4rigm-Knsjk2QjWb4qeyOTZCNSzDhE-3M48DlIdzQw55B4BG3kz-FLcY0LFWIefFFjXm&_nc_ohc=h2R6NEbGm3gQ7kNvwG0vnSo&_nc_oc=AdlgmStmst7VAHbZgsccKqVa51_PzwkgtLfMOmRp2KulrFTgNMyRvi6vYmENz6KvEgI&_nc_zt=23&_nc_ht=scontent.fmnl8-1.fna&oh=03_Q7cD2AG5vazS1xCJIoDJ7kQ7A_QgV9Avt0Cxq2DSF_kxLPv_8g&oe=681C2C5F">
+		<div class="heart-burst">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </label>
+	
+	<label class="photo-click">
+      <input type="checkbox" />
+        <img src="C:\Users\jaybie\Downloads\488871939_1735966843654971_8823777245082474259_n.jpg" alt="https://scontent.fmnl8-6.fna.fbcdn.net/v/t1.15752-9/488871939_1735966843654971_8823777245082474259_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEiXgcvfyr4qCLDNzS5OJKZInOlgzk-Froic6WDOT4WuucvKP7owEDtExCV6qoppb5H1t4_GIhS9OCrih29h0rw&_nc_ohc=QIl80ccUICsQ7kNvwFJMDiG&_nc_oc=Adk2Had1ukICoGKtYsErRMOczZvWco6RCcguDRAda6L_zaR1El3h1yLRNpiBWGC7u8s&_nc_zt=23&_nc_ht=scontent.fmnl8-6.fna&oh=03_Q7cD2AFPr5ZgofFO0SHqSTCRjJBEU_VH-NhmoifynekinaKFrQ&oe=681C3D16">
+		<div class="heart-burst">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💎 Favorite Things</h2>
+      <p>Favorite color: Pink 🌷<br>
+         Favorite animal: Cats 🐱<br>
+         Favorite flower: Roses 🌹<br>
+         Favorite person: <strong>You! 🫶</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ by someone who loves her endlessly.
+  </footer>
+ 
+  <audio autoplay loop hidden>
+  <source src="https://cdn.pixabay.com/audio/2022/03/17/audio_5fcb2038f8.mp3" type="audio/mpeg">
+</audio>
+
+
+</body>
+</html>
