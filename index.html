@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From your future IT!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #fff5f8;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .speech {
+      background-color: #ffe6f0;
+      border-radius: 20px;
+      padding: 10px 20px;
+      border: 2px solid #ff80ab;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #d6336c;
+      animation: pop 1s ease;
+      z-index: 2;
+    }
+
+    .cat-gif {
+      width: 150px;
+      animation: sway 2s ease-in-out infinite;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+
+    .caution {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px 20px;
+      border: 2px solid #ffc107;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      z-index: 2;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      z-index: 2;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    .no-btn {
+      background-color: #ffd6e8;
+      color: #ff4f81;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: 0;
+        opacity: 0.5;
+        transform: translateX(0) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translateX(20px) scale(1.2);
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(-20px) scale(1);
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="wwd.mp3juice.blog - 선재 업고 튀어 (Lovely Runner) OST Part 8 10CM - 봄눈 (Spring Snow) MV (320 KBps).mp3.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="container">
+  <div class="speech">Forgive me😞</div>
+  <img class="cat-gif" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute Cat">
+  <div class="caution">caution!</div>
+
+  <div class="buttons">
+    <button class="yes-btn" onclick="handleYes()">YES</button>
+    <button class="no-btn" onclick="handleNo()">NO</button>
+  </div>
+</div>
+
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 500);
+
+  function handleYes() {
+    alert("Yay! Thank you for forgiving me!");
+  }
+
+  function handleNo() {
+    alert("Aww... please reconsider?");
+  }
+</script>
+
+</body>
+</html>
